@@ -5,7 +5,9 @@ class ThunkGen < Formula
   sha256 "d9252429b9998d8ccc68eaafa3d6504d4a9f47dc8068a841c4084658d0f2c9cf"
   license "GPL-3.0"
 
+  depends_on "bison" => :build
   depends_on "meson" => :build
+  depends_on "ninja" => :build
 
   def install
     system "meson", "setup", "build", *std_meson_args
@@ -14,6 +16,6 @@ class ThunkGen < Formula
   end
 
   test do
-    system "true"
+    system "test", "-e", libexec/"thunk_gen/thunk_gen"
   end
 end
