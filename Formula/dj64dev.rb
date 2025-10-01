@@ -5,6 +5,11 @@ class Dj64dev < Formula
   sha256 "d6cd05e92b1f46f20190a4a0fb8dc5a37f0f4dd29380a35651cb974b6501a975"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/piperswe/homebrew-dosemu2/releases/download/dj64dev-0.3"
+    sha256 x86_64_linux: "e0ae1ce27461fb103c3840ead2cc7bf229a311ed3203e6f021ef4618bcccecba"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gnu-sed" => :build
